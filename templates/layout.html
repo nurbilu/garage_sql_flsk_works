@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add">Add Car</a></li>
+                <li><a href="/display_cars">View Cars</a></li>
+                <li><a href="/upd">Update Car</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">register</a></li>
+            </ul>
+        </nav>
+        {% block footer %}
+        &copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.
+        {% endblock %}
+    </div>
+</body>
+
+</html>
